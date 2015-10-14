@@ -1,2 +1,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+.col-md-3 {
+  border: 1px solid black;
+  margin: 5px;
+}

@@ -1,0 +1,17 @@
+<h1><%= @genre.name %></h1>
+
+<%= link_to "New Artist", new_genre_artist_path(@genre), class: "btn btn-primary"%>
+
+<%= link_to "Back to Genres", genres_path, class: "btn btn-primary" %>
+
+<%= link_to "Delete", genre_path(@genre), :data => {confirm: "Are Your Sure?", method: "delete"}, class: "btn btn-danger" %>
+
+<h3>Here are all the Artists in this genre!</h3>
+
+<div class="row">
+  <% @genre.artists.each do |artist| %>
+    <div class="col-md-3">
+      <h3><%= link_to "#{artist.name}", artist_path(artist) %></h3>
+    </div>
+  <% end %>
+</div>

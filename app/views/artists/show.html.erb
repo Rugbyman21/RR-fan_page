@@ -1,0 +1,13 @@
+
+<h1><%= @artist.name %></h1>
+<h3>Artist Genre</h3>
+<h2><%= link_to "#{@genre.name}", genre_path(@genre) %></h2>
+<h3>Show all info of Artist</h3>
+
+<div class="row">
+  <% @artist.members.each do |member| %>
+    <div class="col-md-3">
+    <h3><%= link_to "#{member.name}", member_path(member) %></h3>
+  </div>
+  <% end %>
+</div>

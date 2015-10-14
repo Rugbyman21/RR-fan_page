@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  root to: 'genres#index'
+  root :to => 'genres#index'
 
-  resources :genre do
-    resources :artist, :only => [:create]
+  resources :genres do
+    resources :artists, :only => [:create, :new]
   end
 
-  resources :artist do
-    resources :member
+  resources :artists, :except => [:create, :new] do
+    resources :members
   end
 end

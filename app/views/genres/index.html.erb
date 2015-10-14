@@ -1,7 +1,13 @@
 <h1>Welcome to Music R Us</h1>
 
+<%= link_to "New Genre", new_genre_path, class: "btn btn-primary" %>
+
 <h3>Here are all the Genres!</h3>
 
-<% @genres.each do |genre| %>
-  <h3><%= genre.name %></h3>
-<% end %>
+<div class="row">
+  <% @genres.each do |genre| %>
+    <div class="col-md-3">
+      <h3><%= link_to "#{genre.name}", genre_path(genre)%></h3>
+    </div>
+  <% end %>
+</div>
