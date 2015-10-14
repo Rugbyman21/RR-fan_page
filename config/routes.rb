@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   resources :artists, :except => [:create, :new] do
     resources :members
+    resources :reviews
   end
 end
