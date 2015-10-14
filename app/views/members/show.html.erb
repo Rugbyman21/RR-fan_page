@@ -1,0 +1,11 @@
+<h1><%= @member.first_name %> <%= @member.last_name %> - <%= @member.age %></h1>
+
+<%= link_to "Back to #{@artist.name}", artist_path(@artist), class: "btn btn-primary" %>
+
+<%= link_to "Delete #{@member.first_name} #{@member.last_name}", artist_member_path(@artist, @member), :data => {confirm: "Are you sure?", method: "delete"}, class: "btn btn-danger" %>
+
+<%= link_to "Update #{@member.first_name} #{@member.last_name}", edit_artist_member_path(@artist, @member), class: "btn btn-warning" %>
+
+<h3><em>In <%= @artist.name %> for <%= @member.time_in_band %> years.</em></h3>
+
+<h3><em><%= @member.instrument %></em></h3>

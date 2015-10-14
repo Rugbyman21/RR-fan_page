@@ -1,13 +1,19 @@
+<h1><%= @artist.name %> - <em><%= @genre.name %></em></h1>
 
-<h1><%= @artist.name %></h1>
-<h3>Artist Genre</h3>
-<h2><%= link_to "#{@genre.name}", genre_path(@genre) %></h2>
+<%= link_to "Add New Member", new_artist_member_path(@artist), class: "btn btn-primary" %>
+
+<%= link_to "Back To #{@genre.name}", genre_path(@genre), class: "btn btn-primary" %>
+
+<%= link_to "Delete #{@artist.name}", artist_path(@artist), :data => {confirm: "Are Your Sure?", method: "delete"}, class: "btn btn-danger" %>
+
+<%= link_to "Update #{@artist.name}", edit_artist_path(@artist), class: "btn btn-warning"%>
+
 <h3>Show all info of Artist</h3>
 
 <div class="row">
   <% @artist.members.each do |member| %>
     <div class="col-md-3">
-    <h3><%= link_to "#{member.name}", member_path(member) %></h3>
+    <h3><%= link_to "#{member.first_name} #{member.last_name}", artist_member_path(@artist, member) %></h3>
   </div>
   <% end %>
 </div>
