@@ -25,6 +25,9 @@ class ArtistsController < ApplicationController
     artist.members.each do |member|
       member.destroy
     end
+    artist.reviews.each do |review|
+      review.destroy
+    end
     artist.destroy
     redirect_to genre_path(@genre)
   end

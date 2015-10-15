@@ -14,6 +14,13 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @artist = Artist.find(params[:id])
+    review =
+    review.destroy
+    redirect_to artist_path(@artist)
+  end
+
 private
   def review_params
     params.require(:review).permit(:author, :content)

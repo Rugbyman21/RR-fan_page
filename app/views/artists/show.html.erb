@@ -26,7 +26,10 @@
   <% @artist.reviews.each do |review| %>
     <div class="col-md-3">
       <h3><%= review.author %></h3>
+      <p><em><%= review.created_at.to_date.to_formatted_s(:long_ordinal) %></em></p>
       <p><%= review.content %></p>
+
+      <%= link_to "Delete", artist_review_path(@artist, review), :data => {confirm: "Are You Sure?", method: "delete"} %>
     </div>
   <% end %>
 </div>

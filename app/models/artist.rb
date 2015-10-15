@@ -3,4 +3,8 @@ class Artist < ActiveRecord::Base
   has_many :members
   has_many :reviews
   validates :name, presence: true
+
+  default_scope {
+    order('name ASC')
+  }
 end
