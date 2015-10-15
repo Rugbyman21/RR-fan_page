@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   end
 
   resources :artists, :except => [:create, :new] do
-    resources :members
-    resources :reviews
+    resources :members, :except => [:index]
+    resources :reviews, :except => [:index]
   end
 
 
