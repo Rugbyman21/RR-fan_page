@@ -15,8 +15,8 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @artist = Artist.find(params[:id])
-    review =
+    @artist = Artist.find(params[:artist_id])
+    review = Review.find(params[:id])
     review.destroy
     redirect_to artist_path(@artist)
   end

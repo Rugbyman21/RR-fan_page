@@ -29,7 +29,9 @@
       <p><em><%= review.created_at.to_date.to_formatted_s(:long_ordinal) %></em></p>
       <p><%= review.content %></p>
 
-      <%= link_to "Delete", artist_review_path(@artist, review), :data => {confirm: "Are You Sure?", method: "delete"} %>
+      <%= link_to "Delete", artist_review_path(@artist, review), :data => {confirm: "Are You Sure?", method: "delete"}, class: "btn btn-danger" %>
+      <br>
+      <br>
     </div>
   <% end %>
 </div>
