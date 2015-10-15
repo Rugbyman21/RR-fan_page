@@ -3,6 +3,6 @@ class Genre < ActiveRecord::Base
   validates :name, presence: true
 
   default_scope {
-    order('name ASC')
+    order('name DESC')
   }
 end
