@@ -1,4 +1,8 @@
 class MembersController < ApplicationController
+  def index
+    @members = Member.all
+  end
+
   def new
     @artist = Artist.find(params[:artist_id])
     @member = Member.new

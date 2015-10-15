@@ -1,0 +1,13 @@
+<h1>Reviews!</h1>
+
+<h3>Here are all of the reviews!</h3>
+
+<div class="row">
+  <% @reviews.each do |review| %>
+    <div class="col-md-3">
+      <h3><%= review.author %></h3>
+      <h5><em>Review for: <%= link_to "#{review.artist.name}", artist_path(review.artist.id) %></em></h5>
+      <h3><%= review.content %></h3>
+    </div>
+  <% end %>
+</div>

@@ -1,4 +1,8 @@
 class ReviewsController < ApplicationController
+  def index
+    @reviews = Review.all
+  end
+
   def new
     @artist = Artist.find(params[:artist_id])
     @review = Review.new

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  root :to => 'genres#index'
+  root :to => "pages#index"
+
+  resources :pages, :only => [:index]
+
+  resources :members, :only => [:index]
+
+  resources :reviews, :only => [:index]
 
   resources :genres do
     resources :artists, :only => [:create, :new]
@@ -9,4 +15,6 @@ Rails.application.routes.draw do
     resources :members
     resources :reviews
   end
+
+
 end

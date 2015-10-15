@@ -1,0 +1,12 @@
+<h1>Members!</h1>
+
+<h3>Here are all of the recorded band members!</h3>
+
+<div class="row">
+  <% @members.each do |member| %>
+    <div class="col-md-3">
+      <h3><%= link_to "#{member.first_name} #{member.last_name}", artist_member_path(member.artist.id, member.id) %></h3>
+      <h3><em>Band: <%= link_to "#{member.artist.name}", artist_path(member.artist.id) %></em></h3>
+    </div>
+  <% end %>
+</div>
